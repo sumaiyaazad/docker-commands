@@ -149,7 +149,7 @@ docker image push <imageName>: <imageTag>
 docker login
 
 -- docker build image from some docker file not default Dockerfile 
-docker build -t  <imageName> -f <dockerfileName> 
+docker build -t  <imageName> -f <dockerfileName> .
 
 -- docker build image from default Dockerfile 
 docker build -t <imageName> .
@@ -181,6 +181,10 @@ docker-compose up
 
 -- setup volumes/networks and start all containers in the background
 docker-compose up -d
+
+-- rebuild docker compose
+docker-compose build
+docker-compose up --build
 
 -- stop all containers and remove cont/vol/net
 docker-compose down
