@@ -349,3 +349,6 @@ docker service update --env-add <key>=<value> --publish-rm <hostport> --publish-
 
 -- cause the tasks to be recreated anyway
 docker service update --force <serviceName>
+
+-- npm clean 
+npm cache clean --force
