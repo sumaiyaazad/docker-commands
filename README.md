@@ -1,51 +1,51 @@
 # docker-commands
 
 
-## for all commands (manage command and sub command)
+### for all commands (manage command and sub command)
 `docker`
 
 ### check docker version
-docker version
+`docker version`
 
--- config values of engine
-docker info
+### config values of engine
+`docker info`
 
--- delete all containers 
-docker rm -vf $(docker ps -a -q)
-docker container prune
+### delete all containers 
+`docker rm -vf $(docker ps -a -q)`
+`docker container prune`
 
--- delete all images
-docker rmi -f $(docker images -a -q)
-docker image prune
+### delete all images
+`docker rmi -f $(docker images -a -q)`
+`docker image prune`
 
--- delete all volumes
-docker volume prune
+### delete all volumes
+`docker volume prune`
 
--- clean up images, containers, volumes, and networks
-docker system prune
+### clean up images, containers, volumes, and networks
+`docker system prune`
 
--- run container port with default latest version
-docker container run --publish/-p <hostPort>:<containerPort> <imageName>
-docker run --publish/-p <hostPort>:<containerPort> <imageName>
+### run container port with default latest version
+`docker container run --publish/-p <hostPort>:<containerPort> <imageName>`
+`docker run --publish/-p <hostPort>:<containerPort> <imageName>`
 
--- run container port with version
-docker container run --publish/-p <hostPort>:<containerPort> <imageName>:<version>
+### run container port with version
+`docker container run --publish/-p <hostPort>:<containerPort> <imageName>:<version>`
 
--- run container port name
-docker container run --publish/-p <hostPort>:<containerPort> --name <containerName> <localhostPort>:<containerPort> <imageName>
+### run container port name
+`docker container run --publish/-p <hostPort>:<containerPort> --name <containerName> <localhostPort>:<containerPort> <imageName>`
 
--- run container port name environment
-docker container run --publish/-p <hostPort>:<containerPort> --name <containerName> --env/-e <key>=<value> <localhostPort>:<containerPort> <imageName>
+### run container port name environment
+`docker container run --publish/-p <hostPort>:<containerPort> --name <containerName> --env/-e <key>=<value> <localhostPort>:<containerPort> <imageName>`
 
--- run container port detach
-docker container run --publish/-p <hostPort>:<containerPort> --detach/-d <localhostPort>:<containerPort> <imageName>
+### run container port detach
+`docker container run --publish/-p <hostPort>:<containerPort> --detach/-d <localhostPort>:<containerPort> <imageName>`
 
--- automatically remove the container when it exits
-docker container run .. --rm
+### automatically remove the container when it exits
+`docker container run .. --rm`
 
--- list running container
-docker container ls
-docker ps
+### list running container
+`docker container ls`
+`docker ps`
 
 -- list all container
 docker container ls -a
