@@ -377,3 +377,6 @@ example: to delete image with this command --> build image with no image: in doc
 
 ### cause the tasks to be recreated anyway
 `docker service update --force <serviceName>`
+
+### container attach
+`docker attach <containerName>`
