@@ -28,6 +28,7 @@
 
 ### run container port with default latest version
 `docker container run --publish/-p <hostPort>:<containerPort> <imageName>`
+
 `docker run --publish/-p <hostPort>:<containerPort> <imageName>`
 
 ### run container port with version
@@ -49,80 +50,83 @@
 `docker container ls`
 `docker ps`
 
--- list all container
-docker container ls -a
-docker ps -a
+### list all container
+`docker container ls -a`
 
--- stop running container
-docker container stop <id>
+`docker ps -a`
 
--- start container
-docker container start <id/name>
+### stop running container
+`docker container stop <id>`
 
--- log container
-docker container logs <id/name>
+### start container
+`docker container start <id/name>`
 
--- log container.. watching 
-docker container logs -f <id/name>
+### log container
+`docker container logs <id/name>`
 
--- details of one container config
-docker container inspect <id/name>
+### log container.. watching 
+`docker container logs -f <id/name>`
 
--- performance stats for all containers
-docker container stats
+### details of one container config
+`docker container inspect <id/name>`
 
--- running process of a container / process list in a container
-docker container top <id/name>
+### performance stats for all containers
+`docker container stats`
 
--- removal of a container
-docker container rm -f(force running container) <id/name>
+### running process of a container / process list in a container
+`docker container top <id/name>`
 
--- start new container interactively
+### removal of a container
+`docker container rm -f(force running container) <id/name>`
+
+### start new container interactively
 docker container run -it .. bash
+
 docker container run -it .. sh
 
--- run additional command in existing running container
+### run additional command in existing running container
 docker container exec -it <name> bash
 docker container exec -it <name> sh
 
--- start existing stopped container interactively
+### start existing stopped container interactively
 docker container start -ai  <name>
 
--- pull an image
+### pull an image
 docker pull <imageName>
 
--- container port check
+### container port check
 docker container port <name>
 
--- container network ip address
+### container network ip address
 docker container inspect --format '{{.NetworkSettings.IPAddress}}' <name>
 
--- show netwrok list
+### show netwrok list
 docker network ls
 
--- inspect a network
+### inspect a network
 docker netwrok inspect <name>
 
--- create a network default driver
+### create a network default driver
 docker network create  <name>
 
--- create a network with thirty party driver
+### create a network with thirty party driver
 docker network create  <name> --driver <thirdpirtydriverName>
 
--- attach a network to container
+### attach a network to container
 docker network connect <networkId> <containerId>
 
--- detach a network from container
+### detach a network from container
 docker netwrok disconnect <networkId> <containerId>
 
--- run container within a network
+### run container within a network
 docker container run --network/--net <networkName> .. 
 
--- inside a network containers connecting with each other
+### inside a network containers connecting with each other
 docker container exec -it <containername1fromNetwork1> <containername2fromNetwork1>
 
--- creating a container with alias 
+### creating a container with alias 
 docker container run --network/net <networkName>  --network-alias/--net-alias <alias> .. 
+ 
 example:
 docker container run -d --net my-app --net-alias search elasticsearch:2
 docker container run -d --net my-app --net-alias search elasticsearch:2
@@ -132,104 +136,104 @@ docker container run --rm --net my-app centos curl -s search:9200
 we will alternatively get those two containers --> load balancing
 this will create two container with different name from same image and they have same alias
 
--- list of images
+### list of images
 docker image ls
 
--- history of image
+### history of image
 docker history  <imageName> : <imageTag>
 
--- inspect image
+### inspect image
 docker image inspect  <name>
 
--- retagging image
+### retagging image
 docker image tag <imageName> <newimageTag>: <newimageTag>
 
--- push image
+### push image
 docker image push <imageName>: <imageTag>
 
--- docker login
+### docker login
 docker login
 
--- docker build image from some docker file not default Dockerfile 
+### docker build image from some docker file not default Dockerfile 
 docker build -t  <imageName> -f <dockerfileName> .
 
--- docker build image from default Dockerfile 
+### docker build image from default Dockerfile 
 docker build -t <imageName> .
 
--- docker push image
+### docker push image
 docker push <imageName> 
 
--- list docker volumes
+### list docker volumes
 docker volume ls
 
--- inspect a volume
+### inspect a volume
 docker volume inspect <id/name>
 
--- create named volumes in docker container run
+### create named volumes in docker container run
 docker container run -v <volumeName>:<volumeofImage> ..
 
--- volume creation
+### volume creation
 docker volume create 
 
--- bind mount starts with // in windows and / in mac
+### bind mount starts with // in windows and / in mac
 docker container run -v <//c/users/..(full path)>:</path/container> ..
 docker container run -v $(pwd):</path/container> ..
 
--- docker compose not default file
+### docker compose not default file
 docker compose -f <ymlfileName> ..
 
--- setup volumes/networks and start all containers
+### setup volumes/networks and start all containers
 docker-compose up
 
--- setup volumes/networks and start all containers in the background
+### setup volumes/networks and start all containers in the background
 docker-compose up -d
 
--- rebuild docker compose
+### rebuild docker compose
 docker-compose build
 docker-compose up --build
 
--- stop all containers and remove cont/vol/net
+### stop all containers and remove cont/vol/net
 docker-compose down
 
--- remove all volumes with compose down
+### remove all volumes with compose down
 docker-compose down -v
 
--- remove local images with compose down (only do it when no custom tag is set by the image)
+### remove local images with compose down (only do it when no custom tag is set by the image)
 docker compose down --rmi local
 example: to delete image with this command --> build image with no image: in docker-compose.yml file
 
--- remove all related images with compose down 
+### remove all related images with compose down 
 docker compose down --rmi all
 
--- other docker compose commands
+### other docker compose commands
 docker-compose logs
 docker-compose top
 docker-compose ps
 
--- clean image
+### clean image
 rm -rf /var/lib/apt/lists/*
 
--- clone git from a single branch and latest commit
+### clone git from a single branch and latest commit
 git clone --branch <branchName> --single-branch --depth 1 ..
 
--- swarm commands
+### swarm commands
 docker swarm
 docker node
 docker update
 docker stack
 docker secret
 
--- check if swarm is active
+### check if swarm is active
 docker info
 (Swarm:inactive)
 
--- swarm initialization
+### swarm initialization
 docker swarm init --advertise-addr <ipaddress>
 
--- list of nodes
+### list of nodes
 docker node ls
 
--- create a service
+### create a service
 docker service create <imageName>
 
 -- create a service with replicas
