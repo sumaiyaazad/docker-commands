@@ -12,10 +12,12 @@
 
 ### delete all containers 
 `docker rm -vf $(docker ps -a -q)`
+
 `docker container prune`
 
 ### delete all images
 `docker rmi -f $(docker images -a -q)`
+
 `docker image prune`
 
 ### delete all volumes
