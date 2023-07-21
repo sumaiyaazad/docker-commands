@@ -23,6 +23,9 @@
 
 `docker container prune`
 
+### delete a container
+`docker rm <containerId>`
+
 ### delete all images
 `docker rmi -f $(docker images -a -q)`
 
