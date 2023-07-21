@@ -28,6 +28,9 @@
 
 `docker image prune`
 
+### delete an image
+`docker rmi <imageId>`
+
 ### list images
 `docker images`
 
