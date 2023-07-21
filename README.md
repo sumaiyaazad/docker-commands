@@ -386,3 +386,6 @@ example: to delete image with this command --> build image with no image: in doc
 
 ### container log tail (last part)
 `docker logs <containerId> | tail`
+
+### docker real time log
+`docker logs <containerId> -f`
