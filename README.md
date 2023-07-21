@@ -28,6 +28,9 @@
 
 `docker image prune`
 
+### list images
+`docker images`
+
 ### delete all volumes
 `docker volume prune`
 
