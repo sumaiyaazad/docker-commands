@@ -198,6 +198,12 @@ we will alternatively get those two containers --> load balancing .. this will c
 ### docker compose not default file
 `docker compose -f <ymlfileName> ..`
 
+### docker compose file up
+`docker compose -f <ymlfileName> up`
+
+### docker compose file down
+`docker compose -f <ymlfileName> down`
+
 ### setup volumes/networks and start all containers
 `docker-compose up`
 
