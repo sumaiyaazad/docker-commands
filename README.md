@@ -380,3 +380,9 @@ example: to delete image with this command --> build image with no image: in doc
 
 ### container attach
 `docker attach <containerName>`
+
+### container log
+`docker logs <containerId>`
+
+### container log tail (last part)
+`docker logs <containerId> | tail`
