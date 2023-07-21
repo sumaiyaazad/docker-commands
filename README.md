@@ -170,10 +170,10 @@ we will alternatively get those two containers --> load balancing .. this will c
 `docker login`
 
 ### docker build image from some docker file not default Dockerfile 
-`docker build -t  <imageName> -f <dockerfileName> .`
+`docker build -t  <imageName>:<tag> -f <dockerfileName> .`
 
 ### docker build image from default Dockerfile 
-`docker build -t <imageName> .`
+`docker build -t <imageName>:<tag> .`
 
 ### docker push image
 `docker push <imageName> `
